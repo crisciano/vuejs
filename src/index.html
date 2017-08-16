@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<h2>Meus livros</h2>
+				<div class="input-group">
+					<input type="text" class="new-book form-control">
+					<span class="input-group-btn">
+						<button @click='addItem' class="add btn btn-default" >adicionar</button>
+					</span>
+				</div>
+				<ul>
+					<li>
+						<div class="checkbox">
+						 <label>
+						     <input class="js-livro" name="list" type="checkbox" />
+						     <big>Alice no País das Maravilhas</big> - <small>Lewis Carrol</small>
+						   </label>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+						 <label>
+						     <input class="js-livro" name="list" type="checkbox">
+						     <big>A Menina que Roubava Livros</big> - <small>Markus Zusak</small>
+						   </label>
+						</div>
+					</li>
+					<li class="removido">
+						<div class="checkbox">
+						 <label>
+						     <input class="js-livro"  name="list"  type="checkbox" checked>
+						    <big>O Senhor dos Anéis - As Duas Torres</big> - <small>J. R. R. Tolkien</small>
+						   </label>
+						</div>
+					</li>
+		       </ul>
+			</div>
+
+		</div>
+	</section>
+
+	<script src="js/index.js"></script>	
+</body>
+</html>
