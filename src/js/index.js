@@ -102,7 +102,7 @@ function onAdd(){
 	let autor 	= elAutor.val();
 
 	// validação simples se o campo não esta vazio 
-	if (livro === '' && auto === '') { 
+	if (livro === '' && autor === '') { 
 		alert('campo vazio!!');
 		return; 
 	}
