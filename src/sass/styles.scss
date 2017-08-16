@@ -1,0 +1,148 @@
+// variaveis
+$primary: #009843;
+$primary-darken: darken($primary, 25);
+$primary-lighten: lighten($primary, 25);
+$secondary: #f2f2f2;
+$secondary-darken: darken($secondary, 25);
+$secondary-lighten: lighten($secondary, 25);
+$branco: #fff;
+$preto: #000;
+$max-mobile: "(max-width: 425px)"; 	//sm
+$min-media: "(min-width: 425px)";
+$max-media: "(max-width: 720px)"; 	//md
+$min-tablet: "(min-width: 720px)";
+$max-tablet: "(max-width: 960px)"; 	//lg
+$min-laptop: "(min-width: 960px)";
+$max-laptop: "(max-width: 1140px)"; //xl
+$min-screen: "(min-width: 1140px)";
+$max-screen: "(max-width: 1980px)";
+$size-default: 18px;
+$dir: "../img/";
+
+// mixins
+@mixin borda-padrao ($raio: 0.3em){
+	-webkit-border-radius: $raio;
+	-moz-border-radius: $raio;
+	-o-border-radius: $raio;
+	-ms-border-radius: $raio;
+	border-radius: $raio;
+}
+
+@mixin btn{
+	padding: 10px;
+	text-decoration: none;
+}
+
+@mixin shadow($shadow: 0 2px 6.65px rgba(0,0,0,0.3)){
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	-ms-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin border($raio: 1em){
+	-webkit-border-radius: $raio;
+	-moz-border-radius: $raio;
+	-o-border-radius: $raio;
+	-ms-border-radius: $raio;
+	border-radius: $raio;
+}
+
+@mixin bg($dir, $url) {
+	background: url($dir+$url);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	position: relative;
+}
+
+@mixin transform($effect) {
+	-webkit-transform: $effect;
+	-ms-transform: $effect;   
+	-moz-transform: $effect;
+	transform: $effect;
+}
+
+@mixin transition($effect) {
+	-webkit-transition: $effect;
+	-ms-transition: $effect;
+	-moz-transition: $effect;
+	transition: $effect;
+}
+
+@mixin rotate($grau) {
+	-webkit-transform: rotate($grau);
+	-ms-transform: rotate($grau);   
+	-moz-transform: rotate($grau);
+	transform: rotate($grau);
+}
+
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder {color: $color; }
+	&::-moz-placeholder { color: $color;}
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder {color: $color; }
+}
+
+%bg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+}
+
+//placeholder
+%shadow {
+	-webkit-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-o-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-ms-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+}
+
+// function
+@function multiplicador($multiplicador) {
+	@return $multiplicador * $size-default;
+}
+@function divisor($divisor) {
+	@return $divisor / $size-default;
+}
+@function soma($soma) {
+	@return $soma + $size-default;
+}
+@function subtracao($subtrair) {
+	@return $subtrair - $size-default;
+}
+
+/* padrao  */
+section { padding: 80px 0; }
+.img-responsive-center { margin: 0 auto; }
+.wd-100{ width: 100% }
+h1, h2, h3, h4, h5, p, a, span, label{  font-family: 'Open Sans', sans-serif; 
+	&.light{ font-weight: 300;}
+	&.regular{ font-weight: 400;}
+	&.bold{font-weight: 700;}
+	&.extra{font-weight: 800;}
+}
+a{ color: $primary; }
+a:hover{ color: $primary-lighten}
+.relative{position: relative; }
+.none{display:none;}
+.block{display: block;}
+.hidden{visibility: hidden;}
+button{ cursor: pointer; }
+
+/*remove box-shadow input*/
+input[type=text], input[type=tel], input[type=email], textarea, button, .btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus { background-image: none; outline: 0; -webkit-box-shadow: none; box-shadow: none; }
+.overlay:after { background: rgba($primary, .5); position: absolute; content: ""; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* custom css */
+#painel{
+	.removido{
+		color: gray; 
+		label { text-decoration: line-through; }
+	}
+	ul li{ list-style-type: none; }
+
+}
+

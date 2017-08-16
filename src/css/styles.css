@@ -1,0 +1,66 @@
+/* padrao  */
+section {
+  padding: 80px 0; }
+
+.img-responsive-center {
+  margin: 0 auto; }
+
+.wd-100 {
+  width: 100%; }
+
+h1, h2, h3, h4, h5, p, a, span, label {
+  font-family: 'Open Sans', sans-serif; }
+  h1.light, h2.light, h3.light, h4.light, h5.light, p.light, a.light, span.light, label.light {
+    font-weight: 300; }
+  h1.regular, h2.regular, h3.regular, h4.regular, h5.regular, p.regular, a.regular, span.regular, label.regular {
+    font-weight: 400; }
+  h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, p.bold, a.bold, span.bold, label.bold {
+    font-weight: 700; }
+  h1.extra, h2.extra, h3.extra, h4.extra, h5.extra, p.extra, a.extra, span.extra, label.extra {
+    font-weight: 800; }
+
+a {
+  color: #009843; }
+
+a:hover {
+  color: #19ff7e; }
+
+.relative {
+  position: relative; }
+
+.none {
+  display: none; }
+
+.block {
+  display: block; }
+
+.hidden {
+  visibility: hidden; }
+
+button {
+  cursor: pointer; }
+
+/*remove box-shadow input*/
+input[type=text], input[type=tel], input[type=email], textarea, button, .btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.overlay:after {
+  background: rgba(0, 152, 67, 0.5);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* custom css */
+#painel .removido {
+  color: gray; }
+  #painel .removido label {
+    text-decoration: line-through; }
+
+#painel ul li {
+  list-style-type: none; }

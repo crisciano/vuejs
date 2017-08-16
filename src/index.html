@@ -3,12 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vue.js</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/index.css">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css"> -->
+	<!-- build:remove --><noscript><!-- endbuild -->
+	<link rel="preload" href="css/estilos.css" as="style" onload="this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="css/estilos.css"></noscript>
+	<!-- build:remove --></noscript><!-- endbuild -->
+
+
+	<noscript>
+		<!-- build:css css/estilos.css -->
+		</noscript>
+			<link rel="stylesheet" href="css/imports.css">
+		<noscript>
+		<!-- endbuild -->
+	</noscript>
 </head>
 <body>
 
-	<section>
+	<section id="painel">
 		<div class="container">
 			<div class="row">
 				<h2>Meus livros</h2>
@@ -18,7 +31,7 @@
 						<button @click='addItem' class="add btn btn-default" >adicionar</button>
 					</span>
 				</div>
-				<ul>
+				<ul class="list-livros">
 					<li>
 						<div class="checkbox">
 						 <label>
@@ -49,6 +62,10 @@
 		</div>
 	</section>
 
-	<script src="js/index.js"></script>	
+	<!-- build:js js/all.js async-->
+		<script src="js/jquery.min.js"></script>
+		<!-- <script src="js/bootstrap.min.js"></script> -->
+		<script src="js/index.js"></script>	
+	<!-- endbuild -->
 </body>
 </html>
