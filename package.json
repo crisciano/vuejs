@@ -1,0 +1,26 @@
+{
+  "name": "vuejs",
+  "version": "1.0.0",
+  "description": "Testando vue.js",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisciano/vuejs.git"
+  },
+  "keywords": [
+    "vue",
+    "mvc",
+    "teste"
+  ],
+  "author": "crisciano s. botelho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisciano/vuejs/issues"
+  },
+  "homepage": "https://github.com/crisciano/vuejs#readme"
+}
