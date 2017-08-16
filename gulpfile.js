@@ -1,3 +1,5 @@
+"use strict";
+
 var gulp = require('gulp')
   ,imagemin       = require('gulp-imagemin')
   ,clean          = require('gulp-clean')
@@ -18,10 +20,10 @@ var gulp = require('gulp')
   ,inlineSource   = require('gulp-inline-source')
   ,sass           = require('gulp-sass')
   ,babel          = require('gulp-babel')
-  ,connect        = require('gulp-connect-php')
+  //,connect        = require('gulp-connect-php')
   ,tinypng        = require('gulp-tinypng')
   ,webserver      = require('gulp-webserver')
-  ,mkdir          = require('mkdirp')
+  //,mkdir          = require('mkdirp')
   ,gutil          = require('gulp-util')
   ,ftp            = require('gulp-ftp');
 
@@ -138,7 +140,7 @@ gulp.task('deployPublic', ['default'], function () {
 
 //server
 gulp.task('server', function() {
-    connect.server();
+    // connect.server();
     
     browserSync.init({
         server: {
@@ -182,39 +184,8 @@ gulp.task('server', function() {
     });   
 });
 
-// let project = 'test'
-// let destiny = 'C:/wamp/apache2/htdocs/'+ project;
-// gulp.task('bk', ['bk-remove'], function(){
-//   gulp.src('src/**/*').pipe(
-//     gulp.dest(destiny)
-//   );
-// });
-
-gulp.task('bk-remove', function(){
-  return gulp.src(destiny).pipe(clean());
-});
-
 // server php
 gulp.task('connect', function() {
-  // connect.server({
-  //     base: 'src',
-  //     open: true,
-  //     debug: true
-  // }, function (){
-  //   browserSync.init({
-  //     proxy: 'localhost:8000'
-  //   });
-  // });
-  // connect.server({
-  //     base: 'src',
-  //     open: true,
-  //     debug: true
-  // }, function (){
-  //   browserSync.init({
-  //     proxy: 'localhost:8000'
-  //   });
-  // });
-
 
   gulp.src('./src')
     .pipe(webserver({
@@ -227,22 +198,6 @@ gulp.task('connect', function() {
         path: './src'
       }
     }));
-/**
-  connect.server({}, function (){
-    browserSync.init({
-      baseDir: 'src',
-      proxy: '127.0.0.1:8000'
-    });
-  });
-**/ 
-/**
-gulp.task('connect', function() {
-  connect.server({}, function (){
-    browserSync.init({
-      proxy: '127.0.0.1:8080'
-    });
-  });**/
-
 
     gulp.watch('src/**/*').on('change', browserSync.reload);
 
