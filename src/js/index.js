@@ -9,10 +9,38 @@ let data = {
 	novoAutor: ''
 }
 
+let dataNew = { 
+    livros: [{ titulo: 'Orange is The New Black', autor: 'Piper Kerman', checked: true },    
+            { titulo: 'A Origem das Espécies', autor: 'Charles Darwin', checked: false }], 
+    titulo: 'Livros Preferidos', 
+    novoLivro: '',
+    novoAutor: ''
+  };
+
 // instanciando um new vue
 new Vue({
 	el: '#vue',
 	data: data
+});
+
+new Vue({
+	el: '#app',
+	data: dataNew,
+	methods: {
+		newBook: function(){
+			let titulo = this.novoLivro.trim();
+			let autor = this.novoAutor.trim();
+			if(titulo && autor){
+				this.livros.push({
+					titulo: titulo,
+					autor: autor,
+					checkbox: false
+				});
+				this.novoLivro = '';
+				this.novoAutor = '';
+			}
+		}
+	}
 });
 
 // js

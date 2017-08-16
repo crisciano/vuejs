@@ -65,7 +65,7 @@
 
 	<section id="vue">
 		<div class="container">
-			<div class="row">
+			<div class="">
 				<h2>{{titulo }}</h2>
 				<ul>
 					<li> {{ livros[0] }} </li>
@@ -74,18 +74,50 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="row">
+			<div class="">
 				<h2> v-model </h2>
 				<em>modificar titulo:</em>
 				<input type="text" v-model="titulo">
 			</div>
 		</div>
 		<div class="container">
-			<div class="row">
+			<div class="">
 				<h2> v-for </h2>
 				<ul>
 					<li v-for="livro in livros">{{livro}}</li>
 				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="app">
+		<div class="container">
+			<div class="">
+				<h2>{{titulo}}</h2>
+				<ul>
+					<li v-for="livro in livros" v-bind:class="{ 'removido': livro.checked }">
+						<div class="checkbox">
+						 <label>
+						  <input class="js-livro" name="list" type="checkbox" v-model="livro.checked">
+						  <big>{{livro.titulo}}</big> - <small>{{livro.autor}}</small>
+						 </label>
+						</div>
+					</li>
+				</ul>
+				<div class="novo">
+					<div class="input-group">
+						<input v-model="novoLivro" @keyup.enter="newBook" type="text" class="form-control">
+						<input v-model="novoAutor" @keyup.enter="newBook" type="text" class="form-control">
+						<span class="input-group-btn">
+							<button @click="newBook" class="add btn btn-default" >adicionar</button>
+						</span>
+					</div>
+				</div>
+				<div class="footer">
+					<hr/>
+					<em>Modifique o título da lista:</em>
+					<input v-model="titulo"/>
+				</div>
 			</div>
 		</div>
 	</section>
