@@ -94,7 +94,9 @@
 		<div class="container">
 			<div class="">
 				<h2>{{titulo}}</h2>
-				<ul>
+				<add-item-cp></add-item-cp >
+				<itens-cp></itens-cp>
+				<!-- <ul>
 					<li v-for="livro in livros" v-bind:class="{ 'removido': livro.checked }">
 						<div class="checkbox">
 						 <label>
@@ -103,20 +105,21 @@
 						 </label>
 						</div>
 					</li>
-				</ul>
+				</ul> -->
 				<div class="novo">
-					<div class="input-group">
+					<!-- <div class="input-group">
 						<input v-model="novoLivro" @keyup.enter="newBook" type="text" class="form-control">
 						<input v-model="novoAutor" @keyup.enter="newBook" type="text" class="form-control">
 						<span class="input-group-btn">
 							<button @click="newBook" class="add btn btn-default" >adicionar</button>
 						</span>
-					</div>
+					</div> -->
 				</div>
 				<div class="footer">
 					<hr/>
 					<em>Modifique o título da lista:</em>
-					<input v-model="titulo"/>
+					<altera-titulo-cp></altera-titulo-cp>
+					<!-- <input v-model="titulo"/> -->
 				</div>
 			</div>
 		</div>

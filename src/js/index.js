@@ -15,7 +15,7 @@ let dataNew = {
     titulo: 'Livros Preferidos', 
     novoLivro: '',
     novoAutor: ''
-  };
+}
 
 // instanciando um new vue
 new Vue({
@@ -23,9 +23,33 @@ new Vue({
 	data: data
 });
 
-new Vue({
-	el: '#app',
-	data: dataNew,
+let ItensCp = Vue.extend({
+	data: function(){
+		return dataNew;
+	},
+	template: '<ul>' + 
+    '			<li v-for="livro in livros" :class="{ \removido\: livro.checked }">'+
+    '             <div class="checkbox">' + 
+    '              <label>' + 
+    '                     <input type="checkbox" v-model="livro.checked"> ' + 
+    '                     <big>{{ livro.titulo }}</big> - <small>{{ livro.autor }}</small>' + 
+    '              </label>' +  
+    '             </div>' +  
+    '           </li>' + 
+    '         </ul>' 
+});
+
+let AlteraTituloCp = Vue.extend({
+	data: function(){
+		return dataNew;
+	},
+	template: '<input v-model="titulo"/>'
+});
+
+let AddItemCp = Vue.extend({
+	data: function(){
+		return dataNew;
+	},
 	methods: {
 		newBook: function(){
 			let titulo = this.novoLivro.trim();
@@ -40,7 +64,26 @@ new Vue({
 				this.novoAutor = '';
 			}
 		}
-	}
+	},
+	template: 	
+		'<div class="input-group">'+
+			'<input v-model="novoLivro" @keyup.enter="newBook" type="text" class="form-control">'+
+			'<input v-model="novoAutor" @keyup.enter="newBook" type="text" class="form-control">'+
+			'<span class="input-group-btn">' +
+				'<button @click="newBook" class="add btn btn-default" >adicionar</button>'+
+			'</span>'+
+		'</div>'
+});
+
+// component vue 
+Vue.component('itens-cp', ItensCp);
+Vue.component('altera-titulo-cp', AlteraTituloCp);
+Vue.component('add-item-cp', AddItemCp);
+
+// instancia vue
+new Vue({
+	el: '#app',
+	data: dataNew,
 });
 
 // js
