@@ -1,5 +1,22 @@
-$(document).ready(function() {
 
+// vue
+
+// simples array
+let data = {
+	livros: ['livro um - autor 1', 'livro dois - autor 2'],
+	titulo: 'Livros 2',
+	novoLivro: '',
+	novoAutor: ''
+}
+
+// instanciando um new vue
+new Vue({
+	el: '#vue',
+	data: data
+});
+
+// js
+$(document).ready(function() {
 	$('.add').click(onAdd);
 	$('.js-livro').click(toggleRemovido);
 });

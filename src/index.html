@@ -63,9 +63,37 @@
 		</div>
 	</section>
 
+	<section id="vue">
+		<div class="container">
+			<div class="row">
+				<h2>{{titulo }}</h2>
+				<ul>
+					<li> {{ livros[0] }} </li>
+					<li> {{ livros[1] }} </li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<h2> v-model </h2>
+				<em>modificar titulo:</em>
+				<input type="text" v-model="titulo">
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<h2> v-for </h2>
+				<ul>
+					<li v-for="livro in livros">{{livro}}</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
 	<!-- build:js js/all.js async-->
 		<script src="js/jquery.min.js"></script>
 		<!-- <script src="js/bootstrap.min.js"></script> -->
+		<script src="js/vue.min.js"></script>
 		<script src="js/index.js"></script>	
 	<!-- endbuild -->
 </body>
